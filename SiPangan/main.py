@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from pathlib import Path
 
 
 # =========================================================
@@ -108,7 +109,17 @@ hr {
 # =========================================================
 @st.cache_data
 def load_data():
-    data = pd.read_csv("data/data_final.csv")
+    base_dir = Path(__file__).resolve().parent
+    data_path = base_dir / "data" / "data_final.csv"
+
+    if not data_path.exists():
+        st.error(
+            "File data_final.csv tidak ditemukan. "
+            "Pastikan file berada di folder SiPangan/data/data_final.csv."
+        )
+        st.stop()
+
+    data = pd.read_csv(data_path)
 
     data["periode_update"] = pd.to_datetime(data["periode_update"])
     data["tahun"] = data["periode_update"].dt.year
@@ -278,7 +289,7 @@ def make_scatter_chart(df, title):
 # =========================================================
 st.title("SiPangan Analytics")
 st.markdown(
-    '<div class="small-caption">Analisis interaktif harga pangan Jawa Timur untuk membaca tren komoditas membandingkan wilayah dan memperkirakan arah harga.</div>',
+    '<div class="small-caption">Analisis interaktif harga pangan Jawa Timur untuk membaca tren komoditas, membandingkan wilayah, dan memperkirakan arah harga.</div>',
     unsafe_allow_html=True
 )
 
