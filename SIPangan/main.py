@@ -1,3 +1,5 @@
+!pip install -r SIPangan/requirements.txt
+
 import os
 import streamlit as st
 import pandas as pd
@@ -109,7 +111,10 @@ hr {
 # =========================================================
 @st.cache_data
 def load_data():
-    BASE_DIR = os.path.dirname(__file__)
+    # In Colab, when this cell is executed, __file__ is not defined.
+    # The 'SIPangan' directory is created in the current working directory of the notebook.
+    # So, we construct the path relative to the current working directory (e.g., /content/).
+    BASE_DIR = os.path.join(os.getcwd(), "SIPangan")
     DATA_PATH = os.path.join(BASE_DIR, "data", "data_final.csv")
 
     if not os.path.exists(DATA_PATH):
