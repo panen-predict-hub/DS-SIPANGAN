@@ -1,6 +1,0 @@
-nama_kolom,tipe_data,deskripsi,contoh_nilai
-series_id,object,Identitas unik deret waktu berdasarkan gabungan wilayah dan komoditas.,Kabupaten Bangkalan | Beras Medium
-nama_kabupaten_kota,object,Nama kabupaten atau kota di Provinsi Jawa Timur.,Kabupaten Bangkalan
-periode_update,datetime64[ns],Periode pencatatan harga dalam format bulanan.,2020-01-01 00:00:00
-kategori,object,Jenis komoditas pangan yang dipantau.,Beras Medium
-jumlah,float64,Harga komoditas dalam rupiah.,8869.0
