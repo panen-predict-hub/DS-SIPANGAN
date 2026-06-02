@@ -524,7 +524,7 @@ Status pengerjaan project:
 | Conclusion | Selesai |
 | Dashboard Preparation | Selesai |
 | A/B Testing Dashboard | Selesai |
-| Deployment Streamlit | Siap / Dalam proses |
+| Deployment Streamlit | Selesai|
 
 ---
 
