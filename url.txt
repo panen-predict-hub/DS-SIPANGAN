@@ -1,1 +1,1 @@
-https://sipangan-analytics.streamlit.app/
+https://sipangan-a.streamlit.app/
